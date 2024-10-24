@@ -1,114 +1,77 @@
-* {
-    box-sizing: border-box;
+body {
+    background-image: linear-gradient(to right, #57625d, #727d79, #8e9996, #acb6b4, #cbd4d3);
 }
 
-body {
-    font-family: "Poppins", serif;
-    background: rgb(192, 195, 34);
-    background-attachment: fixed;
+.input_group {
+    width: 300px;
+    height: 50px;
+    margin: 40px 0 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+}
+
+
+.form {
+    border: 1px solid black;
+    width: 300px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    border-radius: 30px;
+    box-shadow: 10px 5px 5px rgb(7, 0, 0);
+    background-color: darkgray;
 }
 
 .container {
-   background-image:url(./image/leaf.avif);
-    border-radius: 30px;
-    box-shadow: 0px 0px 20px grey;
-    overflow: hidden;
-    max-width: 100%;
-    width: 400px;
-
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
 }
 
-.header {
-    background-image:url(./image/pattern.avif);
-    border-bottom: 1px solid grey;
-    padding: 20px 40px;
+.four {
+    margin-top: 40px;
 }
 
-.header h2 {
-    margin: 0;
-    text-align: center;
-    color: white;
-}
-
-.form {
-    padding: 30px 40px;
-}
-
-.form-control {
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-    position: relative;
-}
-
-.form-control label {
-    display: inline-block;
-    margin-bottom: 5px;
-}
-
-.form-control input {
-    border: 2px solid #f0f0f0;
-    border-radius: 5px;
-    display: block;
-    font-size: 14px;
-    padding: 10px;
-    width: 100%;
-}
-
-.form-control input:focus {
-    outline: none;
-    border-color: #777;
-}
-
-.form-control.success input {
-    border-color: #2ecc71;
-}
-
-.form-control.error input {
-    border-color: red;
-}
-
-.form-control i {
-    visibility: hidden;
-    position: absolute;
-    top: 40px;
-    right: 10px;
-}
-
-.form-control.success i.fa-circle-check {
-    color: #2ecc71;
-    visibility: visible;
-}
-
-.form-control.error i.fa-circle-exclamation {
-    color: red;
-    visibility: visible;
-}
-
-.form-control small {
-    color: red;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    visibility: hidden;
-}
-
-.form-control.error small {
-    visibility: visible;
-}
-
-.form button {
-    background-color: #ebbd39;
-    border: none;
-    border-radius: 5px;
-    color: black;
-    display: block;
+.input_group input {
     font-size: 16px;
-    width: 100%;
-    margin-top: 20px;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid skyblue;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.input_group input:focus {
+    outline: none;
+}
+
+label {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+button {
     padding: 10px;
+    background-color: black;
+    color: whitesmoke;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.input_group .error {
+    size: 12px;
+    margin-top: 5px;
+    color: red;
+}
+
+.input_group.success input {
+    border-color: green;
+    box-shadow: rgba(72, 211, 44, 0.185) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.input_group.error input {
+    border-color: red;
+    box-shadow: rgba(202, 36, 36, 0.308) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }

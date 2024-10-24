@@ -1,53 +1,79 @@
+const userName=document.querySelector('#username')
+const email=document.querySelector('#email')
+const password=document.querySelector('#password')
+const cpassword=document.querySelector('#cpassword')
+const form=document.querySelector('.form')
 
-const form = document.getElementById("form")
-const username = document.getElementById("username")
-const email = document.getElementById("email")
-const password = document.getElementById("password")
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    checkInput();
-});
+form.addEventListener('submit',(e)=>{
+  
+    e.preventDefault()
+    formValidate()
+})
 
-function checkInput() {
-    const usernameValue = username.value.trim();
-    const emailValue = email.value.trim();
-    const passwordValue = password.value.trim();
+function formValidate(){
+    const userNameval=userName.value.trim()
+    const emailval=email.value.trim()
+    const passwordval=password.value.trim()
+    const cpasswordval=cpassword .value.trim() 
 
-    if (usernameValue === '') {
-        setError(username, 'Username Field is Empty');
+    if(userNameval==='')
+    {
+      setError(userName,'Shoud not empty')
     }
-    else {
-        setSuccess(username);
+    else{
+        setSuccess(userName)
     }
-    if (emailValue === '') {
-        setError(email, 'Email Field is empty');
+    if(emailval===''){
+        setError(email,'Shoud not empty')
     }
-    else if (!isEmail(emailValue)) {
-        setError(email, 'Please Enter a Valid Email');
+    else if(!validateEmail(emailval)){
+        setError(email,'Enter valid email')
     }
-    else {
-        setSuccess(email);
+    else{
+        setSuccess(email)
     }
-    if (passwordValue === '') {
-        setError(password, 'Password Field is Empty');
+    if(passwordval===''){
+        setError(password,'Shoud not empty') 
     }
-    else {
-        setSuccess(password);
+    else if(passwordval.length<8)
+    {
+        setError(password,'Must be 8 Charactor') 
+    }
+    else{
+        setSuccess(password)
+    }
+    if(cpasswordval==='')
+    {
+        setError(cpassword,'Shoud not empty')    
+    }
+    else if(!cpassword===password)
+    {
+        setError(cpassword,'Must be Same')  
+    }
+    else
+    {
+        setSuccess(cpassword)
     }
 }
-function setError(input,message){
-    const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
-    formControl.className = 'form-control error';
-    small.innerText = message;
+function setError(element,message){
+    const inputGroup=element.parentElement;
+    const msg=inputGroup.querySelector('.error')
+    inputGroup.classList.add('error')
+    inputGroup.classList.remove('success')
+    msg.textContent=message
 }
-function setSuccess(input){
-    const formControl = input.parentElement;
-    formControl.className = 'form-control success';
+function setSuccess(element){
+    const inputGroup=element.parentElement; 
+    const msg=inputGroup.querySelector('.error')
+    inputGroup.classList.add('success')
+    inputGroup.classList.remove('error')
+    msg.textContent=''
 }
-
-function isEmail(email) {
-    return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-
-}
+const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };

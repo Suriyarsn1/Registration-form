@@ -1,44 +1,42 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
+    <title>Regitration Form</title>
+    <!--Style sheet Link-->
     <link rel="stylesheet" href="style.css">
-
+    <!--Script link-->
+    
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h2>Register Form</h2>
+<div class="container">
+    <form class="form">
+        <h1>Regitration Form</h1>
+        <div class="input_group">
+            <label for="username">UserName</label>
+            <input type="text" id="username" name="username"autocomplete="off">
+            <div class="error"></div>
         </div>
-        <form class="form" id="form">
-            <div class="form-control">
-                <label>UserName</label>
-                <input type="text" id="username">
-                <i class="fa-solid fa-circle-check" style="color: #000000;"></i>
-                <i class="fa-solid fa-circle-exclamation" style="color: #000000;"></i>
-                <small>Error Message</small>
-            </div>
-            <div class="form-control">
-                <label>Email</label>
-                <input type="email" id="email">
-                <i class="fa-solid fa-circle-check" style="color: #000000;"></i>
-                <i class="fa-solid fa-circle-exclamation" style="color: #000000;"></i>
-                <small>Error Message</small>
+        <div class="input_group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" autocomplete="off">
+            <div class="error"></div>
+        </div>
+        <div class="input_group"> <label for="password">Password</label>
+            <input type="text" id="password" name="password" >
+            <div class="error"></div>
+        </div>
+        <div class="input_group"> <label for="cpassword">Confrom Password</label>
+            <input type="text" id="cpassword" name="cpassword">
+            <div class="error"></div>
+        </div>
 
-            </div>
-            <div class="form-control">
-                <label>Password</label>
-                <input type="password" id="password">
-                <i class="fa-solid fa-circle-check" style="color: #000000;"></i>
-                <i class="fa-solid fa-circle-exclamation" style="color: #000000;"></i>
-                <small>Error Message</small>
 
-            </div>
-            <button>Submit</button>
-        </form>
-    </div>
-    <script src="script.js"></script>
+        <div class="four"> <button type="submit">Submit</button></div>
+    </form>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
