@@ -47,7 +47,7 @@ function formValidate(){
     {
         setError(cpassword,'Shoud not empty')    
     }
-    else if(!cpassword===password)
+    else if(cpasswordval!==passwordval)
     {
         setError(cpassword,'Must be Same')  
     }
