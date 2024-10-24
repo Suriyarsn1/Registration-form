@@ -3,12 +3,13 @@ const email=document.querySelector('#email')
 const password=document.querySelector('#password')
 const cpassword=document.querySelector('#cpassword')
 const form=document.querySelector('.form')
-
+let green=true;
 
 form.addEventListener('submit',(e)=>{
-  
+ 
+    if(!formValidate()){
     e.preventDefault()
-    formValidate()
+    }
 })
 
 function formValidate(){
@@ -19,25 +20,30 @@ function formValidate(){
 
     if(userNameval==='')
     {
+      green=false
       setError(userName,'Shoud not empty')
     }
     else{
         setSuccess(userName)
     }
     if(emailval===''){
+        green=false
         setError(email,'Shoud not empty')
     }
     else if(!validateEmail(emailval)){
+        green=false
         setError(email,'Enter valid email')
     }
     else{
         setSuccess(email)
     }
     if(passwordval===''){
+        green=false
         setError(password,'Shoud not empty') 
     }
     else if(passwordval.length<8)
     {
+        green=false
         setError(password,'Must be 8 Charactor') 
     }
     else{
@@ -45,16 +51,19 @@ function formValidate(){
     }
     if(cpasswordval==='')
     {
+        green=false
         setError(cpassword,'Shoud not empty')    
     }
     else if(cpasswordval!==passwordval)
     {
+        green=false
         setError(cpassword,'Must be Same')  
     }
     else
     {
         setSuccess(cpassword)
     }
+    return green;
 }
 function setError(element,message){
     const inputGroup=element.parentElement;
